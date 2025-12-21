@@ -97,12 +97,12 @@ export const navData = [
       {
         title: 'Top Sellers',
         path: '/dynamic/top-sellers',
-        icon: iconify('solar:trophy-bold-duotone'),
+        icon: iconify('solar:medal-star-bold-duotone'),
       },
       {
         title: 'Advertisements',
         path: '/dynamic/advertisements',
-        icon: iconify('solar:megaphone-bold-duotone'),
+        icon: iconify('solar:tv-bold-duotone'),
       },
       {
         title: 'Popular Categories',
