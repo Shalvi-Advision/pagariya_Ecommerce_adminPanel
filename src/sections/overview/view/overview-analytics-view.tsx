@@ -309,10 +309,37 @@ export function OverviewAnalyticsView() {
       <Grid container spacing={3} sx={{ mb: 3 }}>
         <Grid size={{ xs: 12, sm: 6, md: 3 }}>
           <MiniStatCard
+            title="Today's Orders"
+            value={overview.orders.today}
+            icon="solar:calendar-mark-bold"
+            color="#FF6B6B"
+          />
+        </Grid>
+
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+          <MiniStatCard
             title="Pending Orders"
             value={overview.orders.pending}
-            icon="solar:clock-circle-outline"
+            icon="solar:clock-circle-bold"
             color="#FF9800"
+          />
+        </Grid>
+
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+          <MiniStatCard
+            title="Delivered Orders"
+            value={overview.orders.delivered}
+            icon="solar:check-circle-bold"
+            color="#4CAF50"
+          />
+        </Grid>
+
+        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
+          <MiniStatCard
+            title="Refunded Orders"
+            value={overview.orders.refunded}
+            icon="solar:restart-bold"
+            color="#F44336"
           />
         </Grid>
 
@@ -331,15 +358,6 @@ export function OverviewAnalyticsView() {
             value={formatCurrency(overview.revenue.averageOrderValue)}
             icon="eva:trending-up-fill"
             color="#2196F3"
-          />
-        </Grid>
-
-        <Grid size={{ xs: 12, sm: 6, md: 3 }}>
-          <MiniStatCard
-            title="Orders This Week"
-            value={overview.orders.thisWeek}
-            icon="eva:trending-up-fill"
-            color="#9C27B0"
           />
         </Grid>
       </Grid>

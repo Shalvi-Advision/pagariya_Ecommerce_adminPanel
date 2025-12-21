@@ -554,6 +554,8 @@ export interface DashboardOverview {
     thisMonth: number;
     lastMonth: number;
     pending: number;
+    delivered: number;
+    refunded: number;
     growth: number;
   };
   revenue: {
