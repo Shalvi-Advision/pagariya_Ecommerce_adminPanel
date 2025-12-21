@@ -31,6 +31,11 @@ export const navData = [
     icon: icon('ic-user'),
   },
   {
+    title: 'Notifications',
+    path: '/notifications',
+    icon: iconify('solar:bell-bold-duotone'),
+  },
+  {
     title: 'Ecommerce',
     path: '/ecommerce/departments',
     icon: icon('ic-cart'),
