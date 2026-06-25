@@ -330,6 +330,13 @@ export interface PincodePayload {
   is_enabled: 'Enabled' | 'Disabled';
 }
 
+// Distance slab for per-km delivery pricing
+export interface DeliveryDistanceSlab {
+  from_km: number;
+  to_km: number | null;
+  per_km_charge: number;
+}
+
 // Store type matching backend model
 export interface Store {
   _id: string;
@@ -350,6 +357,15 @@ export interface Store {
   contact_number: string;
   email: string;
   whatsappnumber?: string;
+  free_delivery_threshold?: number;
+  free_delivery_radius_km?: number;
+  max_delivery_radius_km?: number;
+  delivery_base_charge?: number;
+  delivery_base_distance_km?: number;
+  delivery_per_km_charge?: number;
+  delivery_distance_slabs?: DeliveryDistanceSlab[];
+  handling_fee?: number;
+  package_fee?: number;
   createdAt?: string;
   updatedAt?: string;
   __v?: number;
@@ -383,6 +399,15 @@ export interface StorePayload {
   contact_number: string;
   email: string;
   whatsappnumber?: string;
+  free_delivery_threshold?: number;
+  free_delivery_radius_km?: number;
+  max_delivery_radius_km?: number;
+  delivery_base_charge?: number;
+  delivery_base_distance_km?: number;
+  delivery_per_km_charge?: number;
+  delivery_distance_slabs?: DeliveryDistanceSlab[];
+  handling_fee?: number;
+  package_fee?: number;
 }
 
 // Delivery Slot type matching backend model

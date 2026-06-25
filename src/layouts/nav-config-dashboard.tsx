@@ -103,6 +103,11 @@ export const navData: NavItem[] = [
         path: '/outlet/delivery-slots',
         icon: iconify('solar:clock-circle-bold-duotone'),
       },
+      {
+        title: 'Delivery Fees',
+        path: '/outlet/delivery-fees',
+        icon: iconify('solar:delivery-bold-duotone'),
+      },
     ],
   },
   {

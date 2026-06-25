@@ -27,6 +27,7 @@ export const OutletPincodesPage = lazy(() => import('src/pages/outlet/pincodes')
 export const OutletStoresPage = lazy(() => import('src/pages/outlet/stores'));
 export const OutletPaymentModesPage = lazy(() => import('src/pages/outlet/payment-modes'));
 export const OutletDeliverySlotsPage = lazy(() => import('src/pages/outlet/delivery-slots'));
+export const OutletDeliveryFeesPage = lazy(() => import('src/pages/outlet/delivery-fees'));
 export const DynamicBestSellersPage = lazy(() => import('src/pages/dynamic/best-sellers'));
 export const DynamicTopSellersPage = lazy(() => import('src/pages/dynamic/top-sellers'));
 export const DynamicAdvertisementsPage = lazy(() => import('src/pages/dynamic/advertisements'));
@@ -98,6 +99,7 @@ export const routesSection: RouteObject[] = [
       { path: 'outlet/stores', element: <PermissionGuard section="outlet"><OutletStoresPage /></PermissionGuard> },
       { path: 'outlet/payment-modes', element: <PermissionGuard section="outlet"><OutletPaymentModesPage /></PermissionGuard> },
       { path: 'outlet/delivery-slots', element: <PermissionGuard section="outlet"><OutletDeliverySlotsPage /></PermissionGuard> },
+      { path: 'outlet/delivery-fees', element: <PermissionGuard section="outlet"><OutletDeliveryFeesPage /></PermissionGuard> },
       { path: 'dynamic/best-sellers', element: <PermissionGuard section="dynamicSection"><DynamicBestSellersPage /></PermissionGuard> },
       { path: 'dynamic/top-sellers', element: <PermissionGuard section="dynamicSection"><DynamicTopSellersPage /></PermissionGuard> },
       { path: 'dynamic/advertisements', element: <PermissionGuard section="dynamicSection"><DynamicAdvertisementsPage /></PermissionGuard> },
