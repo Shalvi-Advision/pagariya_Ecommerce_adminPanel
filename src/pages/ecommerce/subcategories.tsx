@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import Chip from '@mui/material/Chip';
 import Alert from '@mui/material/Alert';
+import Avatar from '@mui/material/Avatar';
 import Table from '@mui/material/Table';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
@@ -210,7 +211,17 @@ export default function Page() {
                         subcategories.map((item) => (
                           <TableRow key={item._id}>
                             <TableCell>
-                              <Typography variant="subtitle2">{item.sub_category_name}</Typography>
+                              <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                                <Avatar
+                                  src={item.image_link}
+                                  alt={item.sub_category_name}
+                                  variant="rounded"
+                                  sx={{ width: 48, height: 48, bgcolor: 'grey.200' }}
+                                />
+                                <Typography variant="subtitle2">
+                                  {item.sub_category_name}
+                                </Typography>
+                              </Box>
                             </TableCell>
                             <TableCell>
                               <Chip

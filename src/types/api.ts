@@ -599,6 +599,7 @@ export interface Subcategory {
   sub_category_name: string;
   category_id: string;
   main_category_name: string;
+  image_link?: string;
   department_name?: string;
   __v?: number;
 }
@@ -609,6 +610,7 @@ export interface SubcategoryPayload {
   sub_category_name: string;
   category_id: string;
   main_category_name: string;
+  image_link?: string;
 }
 
 // Subcategories query parameters for POST endpoint

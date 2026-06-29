@@ -14,6 +14,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import { createSubcategory, updateSubcategory } from 'src/services/subcategories';
 
+import { ImageUpload } from 'src/components/image-upload/image-upload';
+
 interface SubcategoryDialogProps {
   open: boolean;
   subcategory: Subcategory | null;
@@ -35,6 +37,7 @@ export function SubcategoryDialog({
   const [subCategoryName, setSubCategoryName] = useState('');
   const [categoryId, setCategoryId] = useState('');
   const [mainCategoryName, setMainCategoryName] = useState('');
+  const [imageLink, setImageLink] = useState('');
 
   // Load data when editing
   useEffect(() => {
@@ -43,12 +46,14 @@ export function SubcategoryDialog({
       setSubCategoryName(subcategory.sub_category_name);
       setCategoryId(subcategory.category_id);
       setMainCategoryName(subcategory.main_category_name);
+      setImageLink(subcategory.image_link ?? '');
     } else {
       // Reset form for create
       setIdSubCategoryMaster('');
       setSubCategoryName('');
       setCategoryId('');
       setMainCategoryName('');
+      setImageLink('');
     }
     setError('');
   }, [subcategory, open]);
@@ -88,6 +93,7 @@ export function SubcategoryDialog({
       sub_category_name: subCategoryName.trim(),
       category_id: categoryId.trim(),
       main_category_name: mainCategoryName.trim(),
+      image_link: imageLink.trim() || undefined,
     };
 
     try {
@@ -152,6 +158,13 @@ export function SubcategoryDialog({
             value={mainCategoryName}
             onChange={(e) => setMainCategoryName(e.target.value)}
             required
+          />
+
+          <ImageUpload
+            label="Subcategory Image"
+            value={imageLink}
+            onChange={(url) => setImageLink(url)}
+            folder="subcategories"
           />
         </Stack>
       </DialogContent>
